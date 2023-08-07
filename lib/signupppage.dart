@@ -117,7 +117,7 @@ class _SignupState extends State<Signup>{
                               : Icons.visibility)
                       ),
 
-                      hintText: "Password",
+                      hintText: "Confirm Password",
                       border: OutlineInputBorder(borderRadius: BorderRadius.circular(50))),
 
                   validator: (cpass){
