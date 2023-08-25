@@ -48,6 +48,13 @@ class Hotel_Details extends StatelessWidget {
           ),
 
 
+          Positioned(
+            top: 260,
+            left: 340,
+            child: Icon(Icons.favorite),
+          ),
+
+
           SizedBox(height: 620,
 
             child: Row(
