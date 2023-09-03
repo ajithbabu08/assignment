@@ -38,27 +38,27 @@ class Whatsapp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(backgroundColor: Colors.teal,
-        title: Text("WhatsApp"),
-      actions:  [
-        const Icon(Icons.camera_alt_outlined),
-        const SizedBox(width: 20,),
-        const Icon(Icons.search),
-        const SizedBox(width: 20,),
-        
-        PopupMenuButton(itemBuilder: (context){
-
-        return[
-          const PopupMenuItem(child: Text("New group")),
-          const PopupMenuItem(child: Text("New Broadcast")),
-          const PopupMenuItem(child: Text("Linked devices")),
-          const PopupMenuItem(child: Text("Starred messages")),
-          const PopupMenuItem(child: Text("Payments")),
-          const PopupMenuItem(child: Text("Settings")),
-        ];
-        })
-      ],
-      ),
+      // appBar: AppBar(backgroundColor: Colors.teal,
+      //   title: Text("WhatsApp"),
+      // actions:  [
+      //   const Icon(Icons.camera_alt_outlined),
+      //   const SizedBox(width: 20,),
+      //   const Icon(Icons.search),
+      //   const SizedBox(width: 20,),
+      //
+      //   PopupMenuButton(itemBuilder: (context){
+      //
+      //   return[
+      //     const PopupMenuItem(child: Text("New group")),
+      //     const PopupMenuItem(child: Text("New Broadcast")),
+      //     const PopupMenuItem(child: Text("Linked devices")),
+      //     const PopupMenuItem(child: Text("Starred messages")),
+      //     const PopupMenuItem(child: Text("Payments")),
+      //     const PopupMenuItem(child: Text("Settings")),
+      //   ];
+      //   })
+      // ],
+      // ),
       body: ListView(
         children: List.generate(10, (index) => Card(
           child: ListTile(
@@ -84,6 +84,13 @@ class Whatsapp extends StatelessWidget {
           ),
         )),
       ),
+floatingActionButton: FloatingActionButton(backgroundColor: Colors.teal,
+  onPressed: (){},
+
+  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+  mini: true,
+  elevation: 2.0,
+  child: Icon(Icons.message),),
     );
   }
 }

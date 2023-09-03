@@ -35,7 +35,8 @@ class _Music_PlayerState extends State<Music_Player> {
           SliverAppBar(backgroundColor: Colors.black,
             floating: true,
             pinned: false,
-            title: const Center(child: Text("Playlists", style: TextStyle(
+            title: const Center(
+                child: Text("Playlists", style: TextStyle(
                 color: Colors.pink, fontWeight: FontWeight.bold),)),
             bottom: AppBar(
               backgroundColor: Colors.black,
