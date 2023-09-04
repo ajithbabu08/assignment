@@ -1,5 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 void main(){
   runApp(MaterialApp(debugShowCheckedModeBanner: false,
@@ -15,8 +17,17 @@ class Farmers_Fresh extends StatefulWidget {
 class _Farmers_FreshState extends State<Farmers_Fresh> {
 
 
-
+  var index=0;
   var rowname=["VEGETABLES","FRUITS","EXOTIC","FRESH CUTS"];
+
+  var Itemname=["Vegetables","Fruits","Exotic","Fresh Cuts","Nutrition Chargers","Packed Flavors"];
+
+  var image=["assets/images/vegtables.jpg",
+    "assets/images/mixed-fruits splash.jpeg",
+    "assets/images/Kiwi.jpg",
+    "assets/images/mango.jpg",
+    "assets/images/nutritious.jpg",
+    "assets/images/flavors.jpg"];
 
   @override
   Widget build(BuildContext context) {
@@ -29,6 +40,14 @@ class _Farmers_FreshState extends State<Farmers_Fresh> {
             pinned: false,
             title: Text("FARMERS FRESH ZONE",style: TextStyle(fontWeight: FontWeight.bold),),
 
+            actions: [
+              Icon(Icons.location_on,size: 20,),
+              Padding(
+                padding: const EdgeInsets.only(top: 20),
+                child: Text("Kochi"),
+              ),
+              Icon(Icons.arrow_drop_down_outlined)
+            ],
             bottom: AppBar(
               backgroundColor: Colors.green,
               elevation: 0,
@@ -41,7 +60,7 @@ class _Farmers_FreshState extends State<Farmers_Fresh> {
                 height: 30,
 
                 child: Padding(
-                  padding: const EdgeInsets.only(left: 15,bottom: 7,top: 7),
+                  padding: const EdgeInsets.only(left: 15,top: 5),
                   child: TextField(
                     decoration: InputDecoration(
                       prefixIcon: Icon(Icons.search_rounded,size: 20,),
@@ -57,7 +76,7 @@ class _Farmers_FreshState extends State<Farmers_Fresh> {
 
           SliverList(delegate: SliverChildBuilderDelegate((context,index){
             return Padding(
-              padding: const EdgeInsets.only(top: 8,left: 3),
+              padding: const EdgeInsets.only(top: 8,left: 13),
               child: Row(
                 children: [
                   SizedBox(width: 5,),
@@ -83,18 +102,18 @@ class _Farmers_FreshState extends State<Farmers_Fresh> {
         return Padding(
           padding: const EdgeInsets.only(top: 10),
           child: CarouselSlider(items: [
-            Container(decoration:BoxDecoration(image: DecorationImage(fit: BoxFit.cover, image: NetworkImage("https://images.unsplash.com/photo-1691084126270-bd85224539ba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1926&q=80")))),
-            Container(decoration:BoxDecoration(image: DecorationImage(fit: BoxFit.cover,image: NetworkImage("https://images.unsplash.com/photo-1690398252262-6359056cf1b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80")))),
+            Container(decoration:BoxDecoration(image: DecorationImage(fit: BoxFit.cover, image: NetworkImage("https://img.freepik.com/premium-vector/carrot-live-without-you-funny-cute-vegetable-carrot-character-quotes_564312-307.jpg?w=2000")))),
+            Container(decoration:BoxDecoration(image: DecorationImage(fit: BoxFit.cover,image: NetworkImage("assets/images/vegetables_whitebackground_carousel.jpg")))),
             Container(decoration:BoxDecoration(image: DecorationImage(fit: BoxFit.cover,image: NetworkImage("https://images.unsplash.com/photo-1689776529879-8b4772234449?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80")))),
           ],
               options: CarouselOptions(
-                  initialPage: 0,
+                  initialPage: 1,
                   height: 170,
 
                   aspectRatio: 16/9,
                   viewportFraction: 1.0,
                   enableInfiniteScroll: true,
-                  autoPlay: true,
+                  autoPlay: false,
                   autoPlayInterval: Duration(seconds: 3),
                   autoPlayCurve: Curves.linear,
                   // enlargeCenterPage: true,
@@ -106,31 +125,89 @@ class _Farmers_FreshState extends State<Farmers_Fresh> {
 
           
           SliverList(delegate: SliverChildBuilderDelegate((context,index){
-            Padding(
-              padding: const EdgeInsets.only(top: 10),
-              child: Card(color: Colors.blue,
-                child: Row(
-                  children: [
-                    Column(
-                      children: [
-                        Icon(Icons.access_alarms_outlined,color: Colors.green,),
-                        Text("30 mins policy",style: TextStyle(color: Colors.green),),
+            return Padding(
+              padding: const EdgeInsets.only(top: 10,left: 20,right: 20),
+              child: Container(
+                decoration: BoxDecoration(border: Border.all(color: Colors.grey),borderRadius: BorderRadius.circular(10)),
 
-                        Icon(Icons.access_alarms_outlined,color: Colors.green,),
-                        Text("30 mins policy",style: TextStyle(color: Colors.green),),
-
-                        Icon(Icons.access_alarms_outlined,color: Colors.green,),
-                        Text("30 mins policy",style: TextStyle(color: Colors.green),),
-
-                      ],
-                    ),
-                  ],
-                ),
+                  child: Row(mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Column(
+                        children: [
+                          Icon(Icons.access_alarms_outlined,color: Colors.green,),
+                          SizedBox(height: 5,),
+                          Text("30 mins policy",style: TextStyle(fontSize: 10),),
+                        ],
+                      ),
+                      SizedBox(width: 30,),
+                      Column(
+                        children: [
+                          Icon(Icons.phonelink_ring_rounded,color: Colors.green,),
+                          SizedBox(height: 5,),
+                          Text("TRACEABILITY",style: TextStyle(fontSize: 10),),
+                        ],
+                      ),
+                      SizedBox(width: 30,),
+                      Column(
+                        children: [
+                          Icon(Icons.local_shipping_outlined,color: Colors.green,),
+                          SizedBox(height: 5,),
+                          Text("LOCAL SOURCING",style: TextStyle(fontSize: 10),),
+                        ],
+                      ),
+                    ],
+                  ),
               ),
             );
-          },childCount: 1))
+          },childCount: 1)),
+
+
+          SliverList(delegate: SliverChildBuilderDelegate((context,index){
+            return Padding(
+              padding: const EdgeInsets.only(left: 10,top: 10),
+              child: Row(
+                children: [Text("Shop By Category")],
+              ),
+            );
+          },childCount: 1)),
+
+          SliverGrid(
+              delegate: SliverChildBuilderDelegate((context, index) =>
+                  Column(
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(borderRadius:BorderRadius.circular(20),color: Colors.white),
+                        child: Card(
+                          shadowColor: Colors.transparent,
+                          child: Image.asset(image[index], height: 95,width: 100,),
+                        ),
+                      ),
+                      Text(Itemname[index])
+                    ],
+                  ), childCount: 6
+              ),
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 3)),
 
         ]),
+
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        backgroundColor: Colors.white,
+        selectedItemColor: Colors.green,
+        unselectedItemColor: Colors.grey.shade500,
+        currentIndex: index,
+        onTap: (tappedindex){
+          setState(() {
+            index=tappedindex;
+          });
+        },
+        items: [
+          BottomNavigationBarItem(icon: Icon(Icons.home),label: "Home"),
+          BottomNavigationBarItem(icon: Icon(Icons.shopping_cart),label: "Cart"),
+          BottomNavigationBarItem(icon: Icon(FontAwesomeIcons.user),label: "Account"),
+        ],
+      ),
     );
   }
 }
