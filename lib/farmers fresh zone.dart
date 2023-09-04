@@ -136,7 +136,7 @@ class _Farmers_FreshState extends State<Farmers_Fresh> {
                         children: [
                           Icon(Icons.access_alarms_outlined,color: Colors.green,),
                           SizedBox(height: 5,),
-                          Text("30 mins policy",style: TextStyle(fontSize: 10),),
+                          Text("30 MINS POLICY",style: TextStyle(fontSize: 10),),
                         ],
                       ),
                       SizedBox(width: 30,),
