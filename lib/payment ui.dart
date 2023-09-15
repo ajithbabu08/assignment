@@ -39,8 +39,8 @@ class Payment_Ui extends StatelessWidget {
           SliverList(delegate: SliverChildBuilderDelegate((context,index){
             return Stack(
               children: [
-                Container(height: 140,color: Colors.white,),
-                Container(height: 70,color: Colors.red,),
+                Container(height: 140,color: Colors.white),
+                Container(height: 70,color: Colors.red),
 
 
                 Padding(
@@ -111,7 +111,7 @@ class Payment_Ui extends StatelessWidget {
               ),
             ), childCount: 6,
               ),
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3)),
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),),
 
 
 

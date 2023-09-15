@@ -82,16 +82,22 @@ class Hotel_Details extends StatelessWidget {
 
           Padding(
             padding: const EdgeInsets.only(left: 20),
-            child: SizedBox(height: 675,
+            child: SizedBox(height: 680,
               child: Row(
                 children: [
-                  Icon(Icons.location_on,color: Colors.grey),
-                  Text("5 km to Lulu Mall",style: TextStyle(color: Colors.grey,fontSize: 12),),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 15),
+                    child: Icon(Icons.location_on,color: Colors.grey),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 15),
+                    child: Text("5 km to Lulu Mall",style: TextStyle(color: Colors.grey,fontSize: 12),),
+                  ),
 
                   SizedBox(width: 170,),
 
                   Padding(
-                    padding: const EdgeInsets.only(bottom:10),
+                    padding: const EdgeInsets.only(top: 15),
                     child: Text("/per night",style: TextStyle(color: Colors.grey,fontSize: 12),),
                   )
                 ],
