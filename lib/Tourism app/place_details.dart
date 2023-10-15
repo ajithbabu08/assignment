@@ -26,7 +26,7 @@ class _Place_DetailsState extends State<Place_Details> {
               children: [
                 Column(
                   children: [
-                    Text("Venice of the west - Alleppey",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18),),
+                    Text("Venice of the East - Alleppey",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18),),
                     SizedBox(height: 5,),
                     Row(
                       children: [
